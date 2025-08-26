@@ -1,7 +1,7 @@
 
 import ConversationItem from "./conversationItem.tsx";
 import { useConversations } from "../utils/useConversations";
-import { useNavigate } from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {UserContext} from "@/constant.ts";
 import {useContext} from "react";
 
@@ -25,13 +25,14 @@ const formatTime = (timestamp: string) => {
 };
 
 const Conversation = () => {
+    const {id} = useParams();
     const { data, isLoading, error } = useConversations();
     const navigate = useNavigate();
     const {user, setUser} = useContext(UserContext);
 
     if (isLoading) return <div>Chargement...</div>;
     if (error) return <div>Erreur lors du chargement des conversations</div>;
-
+    console.log(id)
     return (
         <div className="p-1">
             {Array.isArray(data) && data.length > 0 ? (
@@ -49,7 +50,7 @@ const Conversation = () => {
                     </div>
                 ))
             ) : (
-                <div>Aucune conversation trouvée</div>
+                <div></div>
             )}
         </div>
     );

@@ -51,9 +51,9 @@ export default function Messages({ id }: MessagesProps) {
     return (
         <div className="flex-grow h-full flex flex-col">
             {/* Header */}
-            <div className="w-full p-1 bg-purple-600 dark:bg-gray-800 shadow-md rounded-xl rounded-bl-none rounded-br-none">
+            <div className="w-full bg-gray-100 p-1 dark:bg-gray-800 shadow-md rounded-xl rounded-bl-none rounded-br-none">
                 <div className="flex p-2 align-middle items-center">
-                    <div className="p-2 md:hidden rounded-full mr-1 hover:bg-purple-500 text-white">
+                    <div className="p-2 md:hidden rounded-full mr-1 text-gray-900">
                         <button
                             type="button"
                             onClick={()=>navigate('/')}
@@ -79,13 +79,13 @@ export default function Messages({ id }: MessagesProps) {
                         <img className="w-14 h-14 rounded-full" src="https://cdn.pixabay.com/photo/2017/01/31/21/23/avatar-2027366_960_720.png" alt="avatar"/>
                     </div>
                     <div className="flex-grow p-2">
-                        <div className="text-md text-gray-50 font-semibold">{pseudo}</div>
+                        <div className="text-md font-semibold">{pseudo}</div>
                         {/*<div className="flex items-center">*/}
                         {/*    <div className="w-2 h-2 bg-green-300 rounded-full"></div>*/}
                         {/*    <div className="text-xs text-gray-50 ml-1">Online</div>*/}
                         {/*</div>*/}
                     </div>
-                    <div className="p-2 text-white cursor-pointer hover:bg-purple-500 rounded-full">
+                    <div className="p-2 text-white cursor-pointer rounded-full">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
                         </svg>
@@ -105,7 +105,7 @@ export default function Messages({ id }: MessagesProps) {
                                     {!isMine && (
                                         <img className="w-8 h-8 m-3 rounded-full" src="https://cdn.pixabay.com/photo/2017/01/31/21/23/avatar-2027366_960_720.png" alt="avatar" />
                                     )}
-                                    <div className={`p-3 ${isMine ? ' bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% ' : 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'} mx-3 my-1 rounded-2xl ${isMine ? 'rounded-br-none' : 'rounded-bl-none'} sm:w-3/4 `}>
+                                    <div className={`p-3 ${isMine ? ' bg-gray-800 ' : 'bg-gray-400'} mx-3 my-1 rounded-2xl ${isMine ? 'rounded-br-none' : 'rounded-bl-none'} `}>
                                         <div className={`text-white font-semibold  pb-2 dark:text-gray-200`}>
                                             {msg.content}
                                         </div>
@@ -117,7 +117,7 @@ export default function Messages({ id }: MessagesProps) {
                             );
                         })
                     ) : (
-                        <div className="text-center h-full bg-white flex justify-between items-center"><p>Aucun message</p></div>
+                        <div className="text-center h-full bg-white flex justify-between items-center"></div>
                     )}
                 </div>
                 <div ref={messagesEndRef}/>

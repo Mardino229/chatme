@@ -31,9 +31,7 @@ router.get('/conversations', requireToken, async (req, res) => {
         const conversationMap = new Map();
 
         messages.forEach((msg) => {
-            const otherUserId =
-                msg.senderId === user.id ? msg.receiverId : msg.senderId;
-
+            const otherUserId = msg.senderId === user.email ? msg.receiverId : msg.senderId;
             if (!conversationMap.has(otherUserId)) {
                 conversationMap.set(otherUserId, {
                     userId: otherUserId,
@@ -44,6 +42,7 @@ router.get('/conversations', requireToken, async (req, res) => {
                 });
             }
         });
+        console.log(conversationMap)
 
         const userIds = Array.from(conversationMap.keys());
 
@@ -52,10 +51,10 @@ router.get('/conversations', requireToken, async (req, res) => {
             where: { id: { not: req.user.userId } },
             select: { id: true, name: true, email: true }
         });
-
+        console.log(users)
         const response = users.map((user) => ({
             user,
-            lastMessage: messages.length > 0? conversationMap.get(user.email).lastMessage: {
+            lastMessage: conversationMap.get(user.email)? conversationMap.get(user.email).lastMessage: {
                 content: "Aucun message pour l'instant",
                 timestamp: "",
             },

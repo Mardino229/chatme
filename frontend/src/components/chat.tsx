@@ -28,7 +28,7 @@ const Chat = () => {
         <div className="h-dvh">
             <div className="flex bg-white dark:bg-gray-900">
                 {/* Liste des conversations (toujours visible en md+, conditionnelle en mobile) */}
-                <div className={`md:w-100 w-screen h-screen dark:bg-gray-800 bg-gray-100 p-2 ${id ? 'hidden md:block' : ''}`}>
+                <div className={`lg:w-100 md:w-80 w-screen h-screen dark:bg-gray-800 bg-gray-100 p-2 ${id ? 'hidden md:block' : ''}`}>
                     <div className="h-full overflow-y-auto">
                         <div className="flex items-center justify-between p-3">
                             <div className="text-xl font-extrabold text-gray-600 dark:text-gray-200">{user?.name}</div>

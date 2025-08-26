@@ -33,7 +33,7 @@ export default function LoginPage() {
             <div className="grid gap-8">
                 <div
                     id="back-div"
-                    className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-[26px] m-4"
+                    className="bg-gray-200 rounded-[26px] m-4"
                 >
                     <div
                         className="border-[20px] border-transparent rounded-[20px] dark:bg-gray-900 bg-white shadow-lg xl:p-10 2xl:p-10 lg:p-10 md:p-10 sm:p-2 m-2"
@@ -72,7 +72,7 @@ export default function LoginPage() {
                               </span>
                             </a>
                             <button
-                                className={`${login.isPending? "bg-white p-2 border flex justify-center": "bg-gradient-to-r hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 ease-in-out dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg mt-6 p-2" }  cursor-pointer text-white rounded-lg w-full  `}
+                                className={`${login.isPending? "bg-white p-2 border flex justify-center": "bg-gray-400 hover:scale-105 transition duration-300 ease-in-out dark:text-gray-300 from-blue-500 to-purple-500 shadow-lg mt-6 p-2" }  cursor-pointer text-white rounded-lg w-full  `}
                                 type="submit"
                                 disabled={login.isPending}
                             >
