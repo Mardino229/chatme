@@ -1,0 +1,61 @@
+### Register (Inscription)
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "email": "test1@example.com",
+  "name": "Test1User",
+  "password": "password123"
+}
+
+###
+
+### Login (Connexion) — stocke automatiquement le cookie JWT
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "test1@example.com",
+  "password": "password123"
+}
+
+###
+
+### Get user
+GET http://localhost:3000/auth/me
+Content-Type: application/json
+
+###
+
+
+### Get user
+POST http://localhost:3000/auth/logout
+Content-Type: application/json
+
+###
+
+### Get messages with user ID 2 (remplace selon les tests)
+GET http://localhost:3000/messages/1
+Content-Type: application/json
+
+###
+
+### Get messages with user ID 2 (remplace selon les tests)
+GET http://localhost:3000/messages/conversations
+Content-Type: application/json
+
+###
+
+### Send message to user ID 2 (remplace selon le test)
+POST http://localhost:3000/messages
+Content-Type: application/json
+
+{
+  "receiverId": "test@example.com",
+  "content": "Bonjourno"
+}
+
+###
+
+### Logout (supprime le cookie)
+POST http://localhost:3000/auth/logout
