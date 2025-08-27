@@ -4,16 +4,12 @@ import Messages from "./messages.tsx";
 import { useUserContext } from "@/components/layout/userContext.tsx";
 import { useParams, useNavigate } from "react-router-dom";
 import { useLogout } from "../utils/useLogout";
-// import {useState} from "react"; // supprimé, plus utilisé
 
 const Chat = () => {
     const { user, setUser } = useUserContext();
     const { id } = useParams();
     const navigate = useNavigate();
     const { mutate: logout, isPending } = useLogout();
-    // Suppression de isOpen/setIsOpen inutilisés
-
-    // Suppression de handleToggle, plus utilisé
 
     const handleLogout = () => {
         logout(undefined, {
@@ -27,7 +23,6 @@ const Chat = () => {
     return (
         <div className="h-dvh">
             <div className="flex bg-white dark:bg-gray-900">
-                {/* Liste des conversations (toujours visible en md+, conditionnelle en mobile) */}
                 <div className={`lg:w-100 md:w-80 w-screen h-screen dark:bg-gray-800 bg-gray-100 p-2 ${id ? 'hidden md:block' : ''}`}>
                     <div className="h-full overflow-y-auto">
                         <div className="flex items-center justify-between p-3">

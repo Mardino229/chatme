@@ -35,7 +35,7 @@ export default function Messages({ id }: MessagesProps) {
             receiverId: id,
         };
 
-        // envoyer au serveur (broadcast socket + POST)
+        // envoie au serveur
         socket.emit('sendMessage', newMsg);
         setMessage("")
     };
