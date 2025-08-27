@@ -31,7 +31,7 @@ const Chat = () => {
                 <div className={`lg:w-100 md:w-80 w-screen h-screen dark:bg-gray-800 bg-gray-100 p-2 ${id ? 'hidden md:block' : ''}`}>
                     <div className="h-full overflow-y-auto">
                         <div className="flex items-center justify-between p-3">
-                            <div className="text-xl font-extrabold text-gray-600 dark:text-gray-200">{user?.name}</div>
+                            <div className="text-xl font-extrabold text-gray-600 dark:text-gray-200">Bienvenue {user?.name}</div>
                             <button
                                 className="ml-4 px-4 py-2 cursor-pointer"
                                 onClick={handleLogout}
